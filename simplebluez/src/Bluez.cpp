@@ -1,5 +1,6 @@
 #include <simplebluez/Bluez.h>
 #include <simplebluez/ProxyOrg.h>
+#include <simpledbus/base/Exceptions.h>
 #include <simpledbus/interfaces/ObjectManager.h>
 
 #include <iostream>
@@ -24,7 +25,11 @@ Bluez::Bluez() : Proxy(std::make_shared<SimpleDBus::Connection>(DBUS_BUS), "org.
 
 Bluez::~Bluez() {
     if (_conn->is_initialized()) {
-        _conn->remove_match("type='signal',sender='org.bluez'");
+        try {
+            _conn->remove_match("type='signal',sender='org.bluez'");
+        } catch (const SimpleDBus::Exception::DBusException&) {
+            // .. not much we can do here
+        }
     }
 }
 
