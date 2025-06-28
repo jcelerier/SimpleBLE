@@ -21,6 +21,7 @@
 namespace SimpleBLE {
 
 void initialize_winrt() {
+    return;
     static bool initialized = false;
 
     if (initialized) return;
