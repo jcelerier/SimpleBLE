@@ -89,10 +89,12 @@ void Logger::log_default_stdout() {
 }
 
 void Logger::log_default_file() {
+#if 0
     std::time_t t = std::time(nullptr);
     std::string date_time_str = fmt::format("{:%Y-%m-%d_%H-%M-%S}", fmt::localtime(t));
     std::string filename = fmt::format("simpleble_{}", date_time_str);
     log_default_file(filename);
+#endif
 }
 
 void Logger::log_default_file(const std::string path) {
