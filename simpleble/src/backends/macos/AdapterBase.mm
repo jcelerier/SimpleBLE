@@ -6,7 +6,7 @@
 
 #include <chrono>
 #include <thread>
-#include <fmt/core.h>
+#include <fmt/format.h>
 
 using namespace SimpleBLE;
 

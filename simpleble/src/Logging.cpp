@@ -1,7 +1,7 @@
 #include "simpleble/Logging.h"
 
 #include <fmt/chrono.h>
-#include <fmt/core.h>
+#include <fmt/format.h>
 #include <ctime>
 #include <fstream>
 #include <mutex>
