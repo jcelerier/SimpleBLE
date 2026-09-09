@@ -2,6 +2,7 @@
 
 #include <simpleble/AdapterSafe.h>
 
+#include <cstdlib>
 #include <cstring>
 
 bool simpleble_adapter_is_bluetooth_enabled(void) {

@@ -3,6 +3,7 @@
 #include <simpleble/PeripheralSafe.h>
 
 #include <climits>
+#include <cstdlib>
 #include <cstring>
 #include <map>
 
