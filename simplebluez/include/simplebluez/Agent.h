@@ -46,7 +46,9 @@ class Agent : public SimpleDBus::Proxy {
 
   private:
     std::shared_ptr<Agent1> agent1();
-    Capabilities _capabilities;
+    // Read by ProxyOrgBluez::register_agent before anyone calls set_capabilities.
+    // KeyboardDisplay is what BlueZ assumes for an empty capability string.
+    Capabilities _capabilities = KeyboardDisplay;
 };
 
 }  // namespace SimpleBluez
